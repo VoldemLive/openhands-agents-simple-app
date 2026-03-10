@@ -1,16 +1,65 @@
-# React + Vite
+# Fullstack Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fullstack application with a React frontend (Vite) and Node.js/Express backend.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+├── frontend/          # React + Vite frontend
+│   ├── src/           # React source files
+│   ├── public/        # Static assets
+│   └── package.json
+├── backend/           # Express.js backend
+│   ├── src/           # Server source files
+│   │   ├── index.js   # Entry point
+│   │   └── routes/    # API routes
+│   └── package.json
+└── README.md
+```
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js (v18 or higher)
+- npm
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+The server will start on http://localhost:3000
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend will start on http://localhost:5173
+
+## API Endpoints
+
+| Method | Endpoint       | Description              |
+|--------|----------------|--------------------------|
+| GET    | /health        | Health check             |
+| GET    | /api           | API information          |
+| GET    | /api/example   | Get example data         |
+| POST   | /api/example   | Create example resource  |
+
+## Development
+
+### Backend
+- `npm run dev` - Start with file watching
+- `npm start` - Start production server
+
+### Frontend
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
